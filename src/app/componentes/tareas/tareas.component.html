@@ -1,0 +1,9 @@
+<h2>Lista de Tareas</h2>
+<ul>
+  <li *ngFor="let tarea of tareas">
+    <span>{{ tarea.titulo }} - {{ tarea.descripcion }}</span>
+    <button (click)="eliminarTarea(tarea.id)">Eliminar</button>
+  </li>
+</ul>
+<a routerLink="/agregar-tarea">Agregar Tarea</a>
+

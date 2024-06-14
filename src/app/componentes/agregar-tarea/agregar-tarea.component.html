@@ -1,0 +1,13 @@
+<h2>Agregar Nueva Tarea</h2>
+<form (ngSubmit)="agregarTarea()">
+  <div>
+    <label for="titulo">Título:</label>
+    <input id="titulo" [(ngModel)]="titulo" name="titulo" required>
+  </div>
+  <div>
+    <label for="descripcion">Descripción:</label>
+    <textarea id="descripcion" [(ngModel)]="descripcion" name="descripcion" required></textarea>
+  </div>
+  <button type="submit">Agregar</button>
+</form>
+<a routerLink="/tareas">Volver a la Lista de Tareas</a>
