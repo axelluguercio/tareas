@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { TareasComponent } from './componentes/tareas/tareas.component';
 import { AgregarTareaComponent } from './componentes/agregar-tarea/agregar-tarea.component';
-import { FormsModule } from '@angular/forms';
-import { appRoutes } from './app.routes'; 
+
+import { appRoutes } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -14,9 +16,7 @@ import { appRoutes } from './app.routes';
     AgregarTareaComponent
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
-    RouterModule.forRoot(appRoutes) // Asegúrate de configurar RouterModule correctamente
+    BrowserModule,FormsModule,RouterModule.forRoot([]) 
   ],
   providers: [],
   bootstrap: [AppComponent]

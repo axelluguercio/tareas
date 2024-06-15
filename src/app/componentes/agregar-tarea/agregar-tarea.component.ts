@@ -1,4 +1,3 @@
-// src/app/componentes/agregar-tarea/agregar-tarea.component.ts
 import { Component } from '@angular/core';
 import { TareaService } from '../../servicios/tarea.service';
 import { Tarea } from '../../interfaces/tarea';
