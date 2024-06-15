@@ -4,8 +4,8 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { TareasComponent } from './componentes/tareas/tareas.component';
 import { AgregarTareaComponent } from './componentes/agregar-tarea/agregar-tarea.component';
-import { FormsModule } from '@angular/forms'; // Asegúrate de importar FormsModule
-import { appRoutes } from './app.routes'; // Asegúrate de importar appRoutes
+import { FormsModule } from '@angular/forms';
+import { appRoutes } from './app.routes'; 
 
 @NgModule({
   declarations: [
