@@ -6,6 +6,7 @@ import { Tarea } from '../interfaces/tarea';
 })
 export class TareaService {
   private tareas: Tarea[] = [];
+  private currentId = 0;
 
   constructor() { }
 
@@ -13,11 +14,11 @@ export class TareaService {
     return this.tareas;
   }
 
-  agregarTarea(tarea: Tarea): void {
-    this.tareas.push(tarea);
+  agregarTarea(tarea: Omit<Tarea, 'id'>) {
+    this.tareas.push({ ...tarea, id: this.currentId++ });
   }
 
-  eliminarTarea(id: number): void {
-    this.tareas = this.tareas.filter(tarea => tarea.id !== id);
+  eliminarTarea(index: number) {
+    this.tareas.splice(index, 1);
   }
 }

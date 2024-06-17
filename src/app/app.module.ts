@@ -1,24 +1,27 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { TareasComponent } from './componentes/tareas/tareas.component';
 import { AgregarTareaComponent } from './componentes/agregar-tarea/agregar-tarea.component';
-
-import { appRoutes } from './app.routes';
+import { TareaItemComponent } from './componentes/tarea-item/tarea-item.component';
+import { TareaService } from './servicios/tarea.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     TareasComponent,
-    AgregarTareaComponent
+    AgregarTareaComponent,
+    TareaItemComponent
   ],
   imports: [
-    BrowserModule,FormsModule,RouterModule.forRoot([]) 
+    BrowserModule,
+    FormsModule,
+    RouterModule.forRoot([])
   ],
-  providers: [],
+  providers: [TareaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

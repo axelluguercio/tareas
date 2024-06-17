@@ -11,18 +11,26 @@ export class AgregarTareaComponent {
   titulo: string = '';
   descripcion: string = '';
 
-  constructor(private tareaService: TareaService) {}
+  constructor(public tareaService: TareaService) {}
 
-  agregarTarea(): void {
-    const nuevaTarea: Tarea = {
-      id: Date.now(),
-      titulo: this.titulo,
-      descripcion: this.descripcion,
-      completada: false
-    };
+  agregarTarea() {
+    if (this.titulo && this.descripcion) {
+      const nuevaTarea = {
+        titulo: this.titulo,
+        descripcion: this.descripcion,
+        completada: false
+      };
+      this.tareaService.agregarTarea(nuevaTarea);
+      this.titulo = '';
+      this.descripcion = '';
+    }
+  }
 
-    this.tareaService.agregarTarea(nuevaTarea);
-    this.titulo = '';
-    this.descripcion = '';
+  eliminarTarea(index: number) {
+    this.tareaService.eliminarTarea(index);
+  }
+
+  get tareas(): Tarea[] {
+    return this.tareaService.getTareas();
   }
 }

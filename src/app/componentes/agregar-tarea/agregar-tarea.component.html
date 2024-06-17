@@ -1,13 +1,16 @@
-<h2>Agregar Nueva Tarea</h2>
-<form (ngSubmit)="agregarTarea()">
-  <div>
+<div>
+  <h2>Agregar Tarea</h2>
+  <form (ngSubmit)="agregarTarea()">
     <label for="titulo">Título:</label>
-    <input id="titulo" ([ngModel])="titulo" name="titulo" required>
-  </div>
-  <div>
+    <input id="titulo" [(ngModel)]="titulo" name="titulo" required>
+
     <label for="descripcion">Descripción:</label>
-    <textarea id="descripcion" ([ngModel])="descripcion" name="descripcion" required></textarea>
+    <textarea id="descripcion" [(ngModel)]="descripcion" name="descripcion" required></textarea>
+
+    <button type="submit">Agregar Tarea</button>
+  </form>
+
+  <div *ngFor="let tarea of tareas; let i = index">
+    <app-tarea-item [tarea]="tarea" (eliminar)="eliminarTarea(i)"></app-tarea-item>
   </div>
-  <button type="submit">Agregar</button>
-</form>
-<a routerLink="/tareas">Volver a la Lista de Tareas</a>
+</div>
